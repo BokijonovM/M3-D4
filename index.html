@@ -43,6 +43,12 @@
             margin-bottom: 3px;
             
         }
+        #myInput{
+            margin-right: 250px;
+        }
+        #inputGroup-sizing-sm{
+            margin-left: 250px;
+        }
     </style>
 
 
@@ -58,7 +64,7 @@
 
                     
 
-
+                    
                     const row = document.querySelector(".row")
                     for(let i = 0; i < books.length; i++){
                         const booksName = books[i]
@@ -80,15 +86,13 @@
                                        Add to card
                                     </button>
                                     </div>
-                                    
                                 </div>
-                                <small class="text-muted">${booksName.asin}</small>
+                                <small class="text-muted">id: ${booksName.asin}</small>
                                 </div>
                             </div>
                             </div>`
                         row.appendChild(col)
-                    }
-                    
+                    }                  
 
 
                     
