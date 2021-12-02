@@ -1,0 +1,44 @@
+body{
+    background-color:rgb(161, 161, 161);
+}
+.main-text{
+    background-color:rgb(161, 161, 161);
+    color: white;
+}
+#nav{
+    height: 100px;
+    width: 100%;
+    z-index: 100;
+    top: 0;
+    left:0;
+    right:0;
+    position: fixed;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: rgb(24, 24, 24)
+}
+.card{
+    background-color:rgb(219, 219, 219);
+    
+}
+.card-title{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.card-img-top{
+    height: 350px;
+}
+.price-button{
+    margin-bottom: 3px;
+    
+}
+#myInput{
+    margin-right: 250px;
+}
+#inputGroup-sizing-sm{
+    margin-left: 250px;
+}
+.main-img{
+    margin-top: 100px;
+}
