@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <title>M3-D2</title>
+  </head>
+  <body>
+   <div class="container d-flex py-4 justify-content-center">
+    <h1 class=" px-4">QUEEN</h1>
+    <button class="btn btn-primary align-middle">LIST ALBUMS</button>
+   </div>
+
+    <div class="container">
+        <div class="row"></div>
+    </div>
+    <style>
+        .card-title{
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .card-img-top{
+            height: 320px;
+        }
+    </style>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <script>
+            const listBooks = () => {
+            fetch("https://striveschool-api.herokuapp.com/books")
+                .then(response => response.json())
+                .then(books => {
+                    // Dom Manipulation
+                    console.log(books)
+                    console.log(books)
+
+
+                    const row = document.querySelector(".row")
+                    for(let i = 0; i < books.length; i++){
+                        const booksName = books[i]
+
+                        const col = document.createElement("div")
+                        col.className = "col-3"
+                        col.innerHTML=`<div>
+                            <div class="card mb-3">
+                                <img src=${booksName.img} class="card-img-top" alt= image>
+                                <div class="card-body">
+                                    <h5 class="card-title">${booksName.title}</h5>
+                                    <p class="card-text">${booksName.price}</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">
+                                        Skip
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-secondary">
+                                       Add to card
+                                    </button>
+                                    </div>
+                                    
+                                </div>
+                                <small class="text-muted">${booksName.asin}</small>
+                                </div>
+                            </div>
+                            </div>`
+                        row.appendChild(col)
+                    }
+
+
+                    
+            })
+            .catch(err => console.log(err))
+            .finally(() => console.log("fetching done"))
+        }
+
+
+        window.onload = () => {
+            document.querySelector("button").addEventListener("click", listBooks)
+
+            console.log("LAST CONSOLE LOG, but seen as first thing (synchronous)")
+        }
+    </script>
+   
+  </body>
+</html>
+
+
