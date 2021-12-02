@@ -21,7 +21,7 @@
             <div class="input-group-prepend">
               <span class="input-group-text" id="inputGroup-sizing-sm">Search</span>
             </div>
-            <input type="text" class="input-search form-control" aria-label="Sizing example input" onkeydown="mysearchResult(event)"
+            <input type="text" class="input-search form-control" id="myInput" aria-label="Sizing example input"
               aria-describedby="inputGroup-sizing-sm">
           </div>
        </div>
@@ -66,10 +66,10 @@
                         const col = document.createElement("div")
                         col.className = "col-3"
                         col.innerHTML=`<div>
-                            <div class="card mb-3" id="card-for-hide">
+                            <div class="card mb-3" id="card-for-hide" id="card">
                                 <img src=${booksName.img} class="card-img-top" alt= image>
                                 <div class="card-body">
-                                    <h5 class="card-title">${booksName.title}</h5>
+                                    <h5 class="card-title" id="card-title">${booksName.title}</h5>
                                     <button type="button" class="btn btn-sm price-button btn-secondary">${booksName.price}</button>                                    
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
@@ -88,6 +88,7 @@
                             </div>`
                         row.appendChild(col)
                     }
+                    
 
 
                     
