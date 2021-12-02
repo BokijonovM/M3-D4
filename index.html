@@ -11,10 +11,22 @@
     <title>M3-D2</title>
   </head>
   <body>
-   <div class="container d-flex py-4 justify-content-center">
-    <h1 class=" px-4">QUEEN</h1>
-    <button class="btn btn-primary align-middle">LIST ALBUMS</button>
-   </div>
+  <section class="jumbotron bg-white">
+    <div class="container">
+        <div class="container d-flex py-4 justify-content-center">
+            <h1 class=" px-4">Books</h1>
+            <button class="btn btn-primary align-middle">List of books</button>
+           </div>
+           <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm">Search</span>
+            </div>
+            <input type="text" class="input-search form-control" aria-label="Sizing example input" onkeydown="mysearchResult(event)"
+              aria-describedby="inputGroup-sizing-sm">
+          </div>
+       </div>
+
+  </section>
 
     <div class="container">
         <div class="row"></div>
@@ -27,6 +39,10 @@
         }
         .card-img-top{
             height: 320px;
+        }
+        .price-button{
+            margin-bottom: 3px;
+            
         }
     </style>
 
@@ -50,17 +66,17 @@
                         const col = document.createElement("div")
                         col.className = "col-3"
                         col.innerHTML=`<div>
-                            <div class="card mb-3">
+                            <div class="card mb-3" id="card-for-hide">
                                 <img src=${booksName.img} class="card-img-top" alt= image>
                                 <div class="card-body">
                                     <h5 class="card-title">${booksName.title}</h5>
-                                    <p class="card-text">${booksName.price}</p>
+                                    <button type="button" class="btn btn-sm price-button btn-secondary">${booksName.price}</button>                                    
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">
+                                    <button type="button" id="skip-button" onclick="skipCard()" class="btn btn-sm btn-outline-secondary">
                                         Skip
                                     </button>
-                                    <button type="button" class="btn btn-sm btn-secondary">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">
                                        Add to card
                                     </button>
                                     </div>
@@ -85,6 +101,10 @@
             document.querySelector("button").addEventListener("click", listBooks)
 
             console.log("LAST CONSOLE LOG, but seen as first thing (synchronous)")
+        }
+
+        function skipCard(){
+            document.getElementById("card-for-hide").style.display = "none"
         }
     </script>
    
