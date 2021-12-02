@@ -14,8 +14,7 @@
   <section class="jumbotron bg-white">
     <div class="container">
         <div class="container d-flex py-4 justify-content-center">
-            <h1 class=" px-4">Books</h1>
-            <button class="btn btn-primary align-middle">List of books</button>
+            <h1 class=" px-4">List of Books</h1>
            </div>
            <div class="input-group input-group-sm mb-3">
             <div class="input-group-prepend">
@@ -38,7 +37,7 @@
             text-overflow: ellipsis;
         }
         .card-img-top{
-            height: 320px;
+            height: 350px;
         }
         .price-button{
             margin-bottom: 3px;
@@ -56,7 +55,8 @@
                 .then(books => {
                     // Dom Manipulation
                     console.log(books)
-                    console.log(books)
+
+                    
 
 
                     const row = document.querySelector(".row")
@@ -99,7 +99,7 @@
 
 
         window.onload = () => {
-            document.querySelector("button").addEventListener("click", listBooks)
+            window.addEventListener("load", listBooks())
 
             console.log("LAST CONSOLE LOG, but seen as first thing (synchronous)")
         }
