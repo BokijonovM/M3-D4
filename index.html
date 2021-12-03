@@ -11,7 +11,7 @@
     <title>M3-D2</title>
   </head>
   <body>
-      <section>
+      <section onclick="removeRight()">
         <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav">
             <a class="navbar-brand" href="#">BookShop</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,17 +31,37 @@
             </div>
           </nav>
       </section>
-
       <section>
-        <div class="d-flex justify-content-center">
-            <img class="mx-5 main-img" src="https://webstockreview.net/images/clipart-book-self-9.png" width="90%" alt="">
-          </div>
+        <div class="right-section" id="right-whole-card" style="display: none;">
+          <div class="right-main-card">
+            <div class="card mb-3" id="card-for-hide" id="card">
+                <img id="right-side-img" src="" class="card-img-top" alt= image>
+                <div class="card-body">
+                    <h5 class="card-title" id="card-title-right">Title</h5>
+                    <button type="button" class="btn btn-sm price-button btn-secondary" id="right-price">Price</button>                                    
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                    <button type="button" id="skip-button" class="btn btn-sm btn-outline-secondary">
+                        Skip
+                    </button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">
+                       Add to card
+                    </button>
+                    </div>
+                </div>
+                <small class="text-muted" id="right-text-muted">id: </small>
+                </div>
+            </div>
+            </div>
+        </div>
       </section>
-  <section class="jumbotron main-text">
+
+     
+  <section class="jumbotron main-text" onclick="removeRight()">
     <div class="container">
         <div class="container d-flex py-4 justify-content-center">
             
-            <h1 class=" px-4">List of Books</h1>
+            <h1 class=" px-4 mt-4">List of Books</h1>
         </div>
        </div>
 

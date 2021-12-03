@@ -39,6 +39,17 @@ body{
 #inputGroup-sizing-sm{
     margin-left: 250px;
 }
-.main-img{
-    margin-top: 100px;
+.right-section{
+    height: 100vh;
+    width: 350px;
+    top: 0;
+    right:0;
+    z-index: 99;
+    position: fixed;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: rgb(139, 139, 139);
+}
+.right-main-card{
+    margin-top: 150px;
 }
